@@ -1,0 +1,23 @@
+AI 1:-
+    Vl and Vr concept.
+    Module 1 Vl = a1S + a0
+    Module 2 Vl = a2S^2 + a1S + a0
+    Both modules are linear in terms of unknown parameters.
+    Aw = y where for different module there is different A(Known terms) and w(Unknown).
+    y = (data set values which were given as results [10,9,7,4])
+    A = [S 1;S^2 1;S^3 1;...S^n 1] and w = [a1;a0]
+    A = [S^2 S 1;S^4 S^2 1;....(S^2)^n S^n 1] and w = [a2;a1;a0]
+    w exists R^m (m parameters) and y exists R^n (n sets of data).
+    n=m: Exact solutions
+    n>m: No exact solution, overfitting case, Least Square case (usual case)
+    n<m: Multiple solutions.
+    Least Square Sol:-
+        n>>m ie number of data points is much more than unknown parameters.
+        ||(Aw-y)||^2 = ÿ = ÿT*y
+        As no exact solution, so E = 0.5*(ÿT)*ÿ where ÿ = Aw-y
+        To minimse solution, differentiate E wrt w.
+        => (Aw-y)T*A = 0
+        => Known as Pseudo Inverse sol. w = (AT*A)^(-1) * AT * y (T is transpose)
+    Minimum Norm Sol:-
+        Minimse ||w||^2 subject to Aw = y.
+        Cost Func: E = 0.5*(wT*w + )
